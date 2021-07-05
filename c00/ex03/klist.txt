@@ -1,0 +1,5 @@
+Credentials cache: API:C3644C70-0927-434B-850B-C6D9F678EE77
+        Principal: bcolin@42LAUSANNE.CH
+
+  Issued                Expires               Principal
+Jul  5 14:30:37 2021  Jul  6 00:30:30 2021  krbtgt/42LAUSANNE.CH@42LAUSANNE.CH
