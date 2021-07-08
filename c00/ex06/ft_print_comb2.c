@@ -6,7 +6,7 @@
 /*   By: bcolin <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 13:59:46 by bcolin            #+#    #+#             */
-/*   Updated: 2021/07/08 16:39:45 by bcolin           ###   ########.fr       */
+/*   Updated: 2021/07/08 23:30:49 by bcolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@ void	count_num1(void)
 	while (d1 < 99)
 	{
 		ft_print(d1 / 10 + '0');
-		ft_print(d1 % 5 + '0' );
+		ft_print(d1 % 10 + '0' );
 		ft_print(' ');
 		ft_print(d2 / 10 + '0');
-		ft_print(d2 % 5 + '0');
+		ft_print(d2 % 10 + '0');
 		if (d1 < 98)
 		{
 			write(1, ", ", 2);
