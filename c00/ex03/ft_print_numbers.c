@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_print_numbers.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bcolin <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/07 22:54:47 by bcolin            #+#    #+#             */
-/*   Updated: 2021/07/07 23:50:44 by bcolin           ###   ########.fr       */
+/*   Created: 2021/07/08 12:13:26 by bcolin            #+#    #+#             */
+/*   Updated: 2021/07/08 12:37:44 by bcolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
 
-void	ft_print_reverse_alphabet(void)
+void	ft_print_number(void)
 {
-	char	letter;
+	int	number;
 
-	letter = 'z';
-	while (letter >= 'a')
-	{
-		write(1, &letter, 1);
-		letter--;
+	number = '0';
+	while (number <= '9')
+	{	
+		write(1, &number, 1);
+		number++;
 	}
 }
