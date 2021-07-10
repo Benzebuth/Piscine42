@@ -6,7 +6,7 @@
 /*   By: bcolin <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/10 12:02:51 by bcolin            #+#    #+#             */
-/*   Updated: 2021/07/10 19:08:13 by bcolin           ###   ########.fr       */
+/*   Updated: 2021/07/10 21:30:23 by bcolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
@@ -42,11 +42,20 @@ void	ft_print(int line, int column, int x_max, int y_max)
 	}
 }
 
+void	ft_negative(int *x, int *y)
+{
+	if (*x < 0)
+		*x = *x * -1;
+	if (*y < 0)
+		*y = *y * -1;
+}
+
 void	rush(int x, int y)
 {
 	int	line;
 	int	column;
 
+	ft_negative(&x, &y);
 	line = 0;
 	while (line < y)
 	{
