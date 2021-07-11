@@ -1,38 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rush00.c                                           :+:      :+:    :+:   */
+/*   rush02.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bcolin <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/10 17:56:08 by bcolin            #+#    #+#             */
-/*   Updated: 2021/07/11 14:47:13 by bcolin           ###   ########.fr       */
+/*   Created: 2021/07/11 12:32:53 by bcolin            #+#    #+#             */
+/*   Updated: 2021/07/11 14:50:16 by bcolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include <unistd.h>
 
 void	ft_putchar(char c);
 
-void	ft_print(int line, int column, int x, int y)
+void	ft_print(int line, int column, int x_max, int y_max)
 {
 	if (line == 0)
 	{
-		if (column == 0 || column == x - 1)
-			ft_putchar('o');
+		if (column == 0 || column == x_max - 1)
+			ft_putchar('A');
 		else
-			ft_putchar('-');
+			ft_putchar('B');
 	}
-	else if (line == y - 1)
+	else if (line == y_max - 1)
 	{
-		if (column == 0 || column == x - 1)
-			ft_putchar('o');
+		if (column == 0 || column == x_max - 1)
+			ft_putchar('C');
 		else
-			ft_putchar('-');
+			ft_putchar('B');
 	}
 	else
 	{
-		if (column == 0 || column == x - 1)
-			ft_putchar('|');
+		if (column == 0 || column == x_max - 1)
+			ft_putchar('B');
 		else
 			ft_putchar(' ');
 	}
@@ -41,9 +42,9 @@ void	ft_print(int line, int column, int x, int y)
 void	ft_negative(int *x, int *y)
 {
 	if (*x < 0)
-		*x = *x * -1;
+		*x *= -1;
 	if (*y < 0)
-		*y = *y * -1;
+		*y *= -1;
 }
 
 void	rush(int x, int y)

@@ -1,38 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rush00.c                                           :+:      :+:    :+:   */
+/*   rush04.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bcolin <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/10 17:56:08 by bcolin            #+#    #+#             */
-/*   Updated: 2021/07/11 14:47:13 by bcolin           ###   ########.fr       */
+/*   Created: 2021/07/11 15:00:29 by bcolin            #+#    #+#             */
+/*   Updated: 2021/07/11 15:01:06 by bcolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include <unistd.h>
 
 void	ft_putchar(char c);
 
-void	ft_print(int line, int column, int x, int y)
+void	ft_print(int line, int column, int x_max, int y_max)
 {
 	if (line == 0)
 	{
-		if (column == 0 || column == x - 1)
-			ft_putchar('o');
+		if (column == 0)
+			ft_putchar('A');
+		else if (column == x_max - 1)
+			ft_putchar('C');
 		else
-			ft_putchar('-');
+			ft_putchar('B');
 	}
-	else if (line == y - 1)
+	else if (line == y_max - 1)
 	{
-		if (column == 0 || column == x - 1)
-			ft_putchar('o');
+		if (column == 0)
+			ft_putchar('C');
+		else if (column == x_max - 1)
+			ft_putchar('A');
 		else
-			ft_putchar('-');
+			ft_putchar('B');
 	}
 	else
 	{
-		if (column == 0 || column == x - 1)
-			ft_putchar('|');
+		if (column == 0 || column == x_max - 1)
+			ft_putchar('B');
 		else
 			ft_putchar(' ');
 	}
