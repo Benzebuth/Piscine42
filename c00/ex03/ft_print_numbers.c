@@ -6,12 +6,12 @@
 /*   By: bcolin <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 12:13:26 by bcolin            #+#    #+#             */
-/*   Updated: 2021/07/08 12:37:44 by bcolin           ###   ########.fr       */
+/*   Updated: 2021/07/11 20:48:57 by bcolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
 
-void	ft_print_number(void)
+void	ft_print_numbers(void)
 {
 	int	number;
 
