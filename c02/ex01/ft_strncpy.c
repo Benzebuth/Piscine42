@@ -6,7 +6,7 @@
 /*   By: bcolin <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 17:16:49 by bcolin            #+#    #+#             */
-/*   Updated: 2021/07/12 23:58:59 by bcolin           ###   ########.fr       */
+/*   Updated: 2021/07/13 00:02:09 by bcolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 		if (c < nbr)
 			*(dest + c) = *(src + c);
 		else
-			*(dest + c) = 'a';
+			*(dest + c) = '\0';
 		c++;
 	}
 	return (dest);
