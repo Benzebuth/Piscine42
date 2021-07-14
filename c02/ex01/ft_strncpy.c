@@ -6,7 +6,7 @@
 /*   By: bcolin <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 17:16:49 by bcolin            #+#    #+#             */
-/*   Updated: 2021/07/13 00:06:21 by bcolin           ###   ########.fr       */
+/*   Updated: 2021/07/14 14:00:25 by bcolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	ft_count(char *str)
 char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
 	unsigned int	c;
-	int				nbr;
+	unsigned int	nbr;
 
 	nbr = ft_count(src);
 	c = 0;

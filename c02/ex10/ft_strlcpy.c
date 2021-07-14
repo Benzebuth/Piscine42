@@ -6,15 +6,16 @@
 /*   By: bcolin <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 19:43:08 by bcolin            #+#    #+#             */
-/*   Updated: 2021/07/13 21:29:18 by bcolin           ###   ########.fr       */
+/*   Updated: 2021/07/14 14:48:40 by bcolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
-	int				c;
+	unsigned int	c;
 	unsigned int	strlen;
 
+	strlen = 0;
 	c = 0;
 	while (src[c++] != '\0')
 		strlen++;

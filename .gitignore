@@ -4,3 +4,4 @@ imestest
 .zshrc
 a.out
 *.swp
+main.c
