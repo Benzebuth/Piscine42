@@ -6,7 +6,7 @@
 /*   By: bcolin <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 13:14:20 by bcolin            #+#    #+#             */
-/*   Updated: 2021/07/12 17:14:09 by bcolin           ###   ########.fr       */
+/*   Updated: 2021/07/14 16:49:50 by bcolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,11 @@ char	*ft_strcpy(char *dest, char *src)
 	int	c;
 
 	c = 0;
-	while (src[c] != '\0')
+	while (src[c])
 	{
 		dest[c] = src[c];
 		c++;
 	}
+	dest[c] = src[c];
 	return (dest);
 }

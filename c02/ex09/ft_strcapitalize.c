@@ -6,7 +6,7 @@
 /*   By: bcolin <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 17:49:14 by bcolin            #+#    #+#             */
-/*   Updated: 2021/07/13 19:40:00 by bcolin           ###   ########.fr       */
+/*   Updated: 2021/07/14 17:09:48 by bcolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,12 @@ int	ft_is_lower(char *str, int c)
 		return (0);
 }
 
+void	ft_upper_it(char *str, int c, int *fl)
+{
+	str[c] -= ' ';
+	*fl = 0;
+}
+
 char	*ft_strcapitalize(char *str)
 {
 	int	c;
@@ -50,10 +56,9 @@ char	*ft_strcapitalize(char *str)
 			if (fl == 1)
 			{
 				if (ft_is_lower(str, c))
-				{
-					str[c] -= ' ';
+					ft_upper_it(str, c, &fl);
+				else
 					fl = 0;
-				}
 			}
 		}
 		else if (ft_is_numeric(str, c))
