@@ -6,12 +6,12 @@
 /*   By: bcolin <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 15:13:40 by bcolin            #+#    #+#             */
-/*   Updated: 2021/07/15 17:43:08 by bcolin           ###   ########.fr       */
+/*   Updated: 2021/07/15 17:46:12 by bcolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+//#include <stdio.h>
+//#include <string.h>
 
 unsigned int	ft_strlen(char *str)
 {
