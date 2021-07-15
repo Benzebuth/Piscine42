@@ -6,7 +6,7 @@
 /*   By: bcolin <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 13:41:34 by bcolin            #+#    #+#             */
-/*   Updated: 2021/07/15 22:16:15 by bcolin           ###   ########.fr       */
+/*   Updated: 2021/07/15 23:59:32 by bcolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 //#include <stdio.h>
@@ -29,7 +29,7 @@ char	*ft_strncat(char *dest, char *src, unsigned int nb)
 
 	i = 0;
 	strlen = ft_strlen(dest);
-	while (i < nb && *src)
+	while (src[i] != '\0' && i < nb)
 	{
 		dest[strlen + i] = src[i];
 		i++;
