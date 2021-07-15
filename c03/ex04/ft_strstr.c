@@ -6,7 +6,7 @@
 /*   By: bcolin <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 15:13:40 by bcolin            #+#    #+#             */
-/*   Updated: 2021/07/15 17:46:12 by bcolin           ###   ########.fr       */
+/*   Updated: 2021/07/15 22:16:41 by bcolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,23 +23,22 @@ unsigned int	ft_strlen(char *str)
 	return (i);
 }
 
-unsigned int	ft_is_found(unsigned int findlen, unsigned int cptr)
+int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	if (cptr == (findlen - 1))
-		return (1);
+	unsigned int	c;
+
+	c = 0;
+	while (c++ < n && *s1 && *s2)
+	{
+		if (*s1 == *s2)
+		{
+			s1++;
+			s2++;
+		}
+		else
+			return (*s1 - *s2);
+	}
 	return (0);
-}
-
-void	ft_init(unsigned int *c, unsigned int *cptr)
-{
-	*c = 0;
-	*cptr = 0;
-}
-
-void	ft_end(unsigned int *cptr, unsigned int *c)
-{
-	*cptr = 0;
-	*c = *c + 1;
 }
 
 char	*ft_strstr(char *str, char *to_find)
@@ -47,26 +46,17 @@ char	*ft_strstr(char *str, char *to_find)
 	unsigned int	strlen;
 	unsigned int	findlen;
 	unsigned int	c;
-	unsigned int	cptr;
-	char			*ptrf;
 
+	c = 0;
 	findlen = ft_strlen(to_find);
 	strlen = ft_strlen(str);
-	ft_init(&c, &cptr);
-	while (c < strlen)
+	if (! to_find)
+		return (str);
+	while ((strlen - c) >= findlen)
 	{
-		if (str[c] == to_find[cptr])
-		{
-			ptrf = &str[c];
-			while (cptr < findlen && *str)
-			{
-				if (str[c + cptr] == to_find[cptr])
-					if (ft_is_found(findlen, cptr))
-						return (ptrf);
-				cptr++;
-			}	
-		}
-		ft_end(&cptr, &c);
+		if (! ft_strncmp(str + c, to_find, findlen))
+			return (str + c);
+		c++;
 	}
 	return ((void *)0);
 }
