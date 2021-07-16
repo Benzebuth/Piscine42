@@ -6,21 +6,21 @@
 /*   By: bcolin <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/14 17:26:40 by bcolin            #+#    #+#             */
-/*   Updated: 2021/07/15 23:55:35 by bcolin           ###   ########.fr       */
+/*   Updated: 2021/07/16 13:21:47 by bcolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 //#include <stdio.h>
 
 int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	unsigned int	i;
+	unsigned int	c;
 
-	i = 0;
-	while ((*(s1 + i) != '\0' || *(s2 + i) != '\0') && i < n)
+	c = 0;
+	while ((*(s1 + c) != '\0' || *(s2 + c) != '\0') && c < n)
 	{
-		if (! (*(s1 + i) == *(s2 + i)))
-			return (*(s1 + i) - *(s2 + i));
-		i++;
+		if (! (*(s1 + c) == *(s2 + c)))
+			return (*(s1 + c) - *(s2 + c));
+		c++;
 	}
 	return (0);
 }
