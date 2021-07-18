@@ -6,11 +6,11 @@
 /*   By: bcolin <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 19:10:47 by bcolin            #+#    #+#             */
-/*   Updated: 2021/07/18 19:08:08 by bcolin           ###   ########.fr       */
+/*   Updated: 2021/07/18 21:11:13 by bcolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <unistd.h>
+#include <unistd.h>
 
 void	ft_print(char c)
 {

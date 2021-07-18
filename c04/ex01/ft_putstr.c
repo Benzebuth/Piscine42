@@ -6,11 +6,11 @@
 /*   By: bcolin <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 18:08:38 by bcolin            #+#    #+#             */
-/*   Updated: 2021/07/15 18:18:18 by bcolin           ###   ########.fr       */
+/*   Updated: 2021/07/18 21:10:13 by bcolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <unistd.h>
+#include <unistd.h>
 
 void	ft_putstr(char *str)
 {
