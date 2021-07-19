@@ -6,7 +6,7 @@
 /*   By: bcolin <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/19 22:18:35 by bcolin            #+#    #+#             */
-/*   Updated: 2021/07/19 23:17:57 by bcolin           ###   ########.fr       */
+/*   Updated: 2021/07/19 23:52:10 by bcolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ char	*ft_strdup(char *src)
 	int		len;
 	int		c;
 
-
 	len = ft_strlen(src);
 	dest = (char *)malloc(sizeof(char) * len);
 	if (dest == NULL)
@@ -42,8 +41,9 @@ char	*ft_strdup(char *src)
 	}
 	return (dest);
 }
-
+/*
 int	main()
 {
 	printf("%s", ft_strdup("coucoutest"));
 }
+*/
