@@ -6,34 +6,28 @@
 /*   By: bcolin <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 22:33:46 by bcolin            #+#    #+#             */
-/*   Updated: 2021/07/18 19:06:08 by bcolin           ###   ########.fr       */
+/*   Updated: 2021/07/19 13:14:04 by bcolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 //#include <stdio.h>//
 
 int	ft_minus(char **ptr)
 {	
-	int	c;
+	int	s;
 
-	c = 0;
+	s = 1;
 	while (**ptr == '-' || **ptr == '+')
 	{
 		if (**ptr == '-')
-		{
-			c++;
-			(*ptr)++;
-		}
-		if (**ptr == '+' )
-			(*ptr)++;
-		if (c % 2 == 0)
-			return (1);
+			s *= -1;
+		(*ptr)++;
 	}
-	return (-1);
+	return (s);
 }
 
 void	ft_is_space(char **ptr)
 {
-	while (**ptr == ' ')
+	while (**ptr == ' ' || (**ptr >= 9 && **ptr <= 13))
 		(*ptr)++;
 }
 
@@ -77,7 +71,7 @@ int	ft_atoi(char *str)
 /*
 int	main()
 {
-	char	str[] = "  -------+--+1234ab567";
+	char	str[] = " 		----2147483647";
 	int		recu;
 
 	recu = ft_atoi(str);
