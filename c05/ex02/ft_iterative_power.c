@@ -6,7 +6,7 @@
 /*   By: bcolin <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/19 15:12:35 by bcolin            #+#    #+#             */
-/*   Updated: 2021/07/19 16:36:13 by bcolin           ###   ########.fr       */
+/*   Updated: 2021/07/19 19:26:35 by bcolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	ft_iterative_power(int nb, int power)
 	}
 	return (nb);
 }
-
+/*
 int	main()
 {
 	printf("%d ^ %d = %d\n", -801, -569, ft_iterative_power(-801, -569));
@@ -45,4 +45,4 @@ int	main()
     printf("%d ^ %d = %d\n", -4, 9, ft_iterative_power(-4, 9));
     printf("%d ^ %d = %d\n", -3, 10, ft_iterative_power(-3, 10));
 }
-
+*/
