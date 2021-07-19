@@ -6,7 +6,7 @@
 /*   By: bcolin <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/19 23:25:19 by bcolin            #+#    #+#             */
-/*   Updated: 2021/07/19 23:50:11 by bcolin           ###   ########.fr       */
+/*   Updated: 2021/07/20 00:03:48 by bcolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ int	*ft_range(int min, int max)
 	int	i;
 
 	tab = (int *)malloc(sizeof(int) * (max - min));
+	if (tab == NULL)
+		return (NULL);
 	i = 0;
 	while (min < max)
 	{
