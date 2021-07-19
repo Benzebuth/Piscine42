@@ -6,7 +6,7 @@
 /*   By: bcolin <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/18 19:53:48 by bcolin            #+#    #+#             */
-/*   Updated: 2021/07/19 16:33:42 by bcolin           ###   ########.fr       */
+/*   Updated: 2021/07/19 21:20:02 by bcolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
@@ -15,7 +15,7 @@ int	ft_iterative_factorial(int nb)
 {
 	int	c;
 
-	c = nb -1;
+	c = nb - 1;
 	if (nb < 0)
 		return (0);
 	if (nb == 0)
@@ -25,7 +25,7 @@ int	ft_iterative_factorial(int nb)
 		nb *= c;
 		c--;
 	}
-	return nb;
+	return (nb);
 }
 /*
 int	main()
