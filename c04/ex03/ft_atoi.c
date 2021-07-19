@@ -6,7 +6,7 @@
 /*   By: bcolin <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 22:33:46 by bcolin            #+#    #+#             */
-/*   Updated: 2021/07/19 13:14:04 by bcolin           ###   ########.fr       */
+/*   Updated: 2021/07/19 13:17:49 by bcolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 //#include <stdio.h>//
@@ -71,7 +71,7 @@ int	ft_atoi(char *str)
 /*
 int	main()
 {
-	char	str[] = " 		----2147483647";
+	char	str[] = " 		-0";
 	int		recu;
 
 	recu = ft_atoi(str);
