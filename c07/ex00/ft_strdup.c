@@ -6,7 +6,7 @@
 /*   By: bcolin <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/19 22:18:35 by bcolin            #+#    #+#             */
-/*   Updated: 2021/07/19 23:52:10 by bcolin           ###   ########.fr       */
+/*   Updated: 2021/07/21 14:22:30 by bcolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,14 @@ char	*ft_strdup(char *src)
 	len = ft_strlen(src);
 	dest = (char *)malloc(sizeof(char) * len);
 	if (dest == NULL)
-		return (NULL);
+		return (0);
 	c = 0;
 	while (c < len)
 	{
 		dest[c] = src[c];
 		c++;
 	}
+	dest[c] = '\0';
 	return (dest);
 }
 /*

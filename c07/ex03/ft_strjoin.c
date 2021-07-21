@@ -6,12 +6,13 @@
 /*   By: bcolin <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 14:55:05 by bcolin            #+#    #+#             */
-/*   Updated: 2021/07/20 22:59:56 by bcolin           ###   ########.fr       */
+/*   Updated: 2021/07/21 14:01:49 by bcolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
+
 int	ft_strlen(char *str);
 
 int	ft_tablen(char **str)
@@ -80,6 +81,7 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 			ft_add_sep(&c, sep, dest);
 		i++;
 	}
+	dest[c] = '\0';
 	return (dest);
 }
 /*
