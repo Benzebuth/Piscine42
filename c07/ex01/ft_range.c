@@ -6,7 +6,7 @@
 /*   By: bcolin <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/19 23:25:19 by bcolin            #+#    #+#             */
-/*   Updated: 2021/07/21 14:09:35 by bcolin           ###   ########.fr       */
+/*   Updated: 2021/07/21 16:30:53 by bcolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ int	*ft_range(int min, int max)
 	int	*tab;
 	int	i;
 
-    if (min >= max)
-        return (0);
+	if (min >= max)
+		return (0);
 	tab = (int *)malloc(sizeof(int) * (max - min));
 	if (tab == NULL)
 		return (0);
