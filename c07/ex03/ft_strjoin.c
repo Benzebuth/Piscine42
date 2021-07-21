@@ -6,7 +6,7 @@
 /*   By: bcolin <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 14:55:05 by bcolin            #+#    #+#             */
-/*   Updated: 2021/07/21 14:01:49 by bcolin           ###   ########.fr       */
+/*   Updated: 2021/07/21 19:38:31 by bcolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,12 +67,12 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	int		c;
 
 	if (size < 1)
-		return (dest = malloc(sizeof(char)));
-	strlen = ft_tablen(strs) + (size - 1) * ft_strlen(sep);
+		;
+	strlen = ft_tablen(strs) + (size - 1) * ft_strlen(sep) + 1;
 	dest = malloc(strlen * sizeof(char));
 	i = 0;
 	c = 0;
-	while (c < strlen)
+	while (c < (strlen - 1))
 	{
 		j = 0;
 		while (j < ft_strlen(strs[i]))
@@ -87,7 +87,11 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 /*
 int	main(int argc, char **argv)
 {
-	char *sep = "=>";
-	printf("dest:%s", ft_strjoin(argc, argv, sep));
+	char *sep = "=";
+	char *dest;
+
+	dest = ft_strjoin(argc - 1, argv + 1, sep);
+	printf("dest:%s", dest);
+	free(dest);
 }
 */
