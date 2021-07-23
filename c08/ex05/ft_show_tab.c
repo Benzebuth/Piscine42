@@ -6,7 +6,7 @@
 /*   By: bcolin <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/22 23:38:19 by bcolin            #+#    #+#             */
-/*   Updated: 2021/07/23 00:31:19 by bcolin           ###   ########.fr       */
+/*   Updated: 2021/07/23 21:40:21 by bcolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,27 @@
 
 void	ft_putchar(char c);
 
-void	ft_putnbr(int nb)
+void	ft_putunbr(int nb)
 {
-	if (nb > 9)
+	unsigned int	unb;
+
+	if (nb < 0)
 	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
+		ft_putchar('-');
+		unb = (unsigned int)nb * -1;
+	}
+	else
+		unb = (unsigned int)nb;
+	if (unb > 9)
+	{
+		ft_putunbr(unb / 10);
+		ft_putunbr(unb % 10);
 	}
 	else
 	{
-		nb += '0';
-		ft_putchar(nb);
+		unb += '0';
+		ft_putchar(unb);
 	}
-
 }
 
 void	ft_putchar(char c)
@@ -50,7 +58,7 @@ void	ft_show_tab(struct s_stock_str *par)
 	{
 		ft_putstr(par[i].str);
 		ft_putchar('\n');
-		ft_putnbr(par[i].size);
+		ft_putunbr(par[i].size);
 		ft_putchar('\n');
 		ft_putstr(par[i].copy);
 		ft_putchar('\n');
