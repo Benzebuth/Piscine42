@@ -6,7 +6,7 @@
 /*   By: bcolin <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/24 16:53:36 by bcolin            #+#    #+#             */
-/*   Updated: 2021/07/25 00:12:50 by bcolin           ###   ########.fr       */
+/*   Updated: 2021/07/25 19:17:42 by bcolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_base.h"
@@ -55,10 +55,10 @@ int	ft_s_tab(char *lib)
 
 char	*ft_parse_id(char *lib, int *gi)
 {
-	int	c;
-	char *tab;
-	int	offset;	
-	int	i;
+	int		c;
+	char	*tab;
+	int		offset;	
+	int		i;
 
 	c = 0;
 	while (lib[*gi] < '0' || lib[*gi] > '9')
@@ -81,16 +81,44 @@ char	*ft_parse_id(char *lib, int *gi)
 	return (tab);
 }
 
+char	*ft_parse_value(char *lib, int *gi)
+{
+	int		c;
+	char	*tab;
+	int		offset;
+	int		i;
+
+	while (lib[*gi] < 'a' || lib[*gi] > 'z')
+		*gi += 1;
+	c = 0;
+	while (lib[*gi] != '\n')
+	{
+		*gi += 1;
+		c++;
+	}
+	tab = malloc((c + 1) * sizeof(char));
+	offset = *gi - c;
+	i = 0;
+	while (offset < *gi)
+	{
+		tab[i] = lib[offset];
+		offset++;
+		i++;
+	}
+	tab[i] = '\0';
+	return (tab);
+}
+
 struct s_lib_en	*ft_create_tab_struct(char *lib)
 {
-	int	s_tab;
-	int	i;
+	int			s_tab;
+	int			i;
 	t_lib_en	*final_struct;
 	t_lib_en	temp_struct;
-	int	gi;
+	int			gi;
 
 	s_tab = ft_s_tab(lib);
-	final_struct = malloc(s_tab * sizeof(t_lib_en));
+	final_struct = malloc(s_tab * sizeof(t_lib_en) + 1);
 	i = 0;
 	gi = 0;
 	while (i < s_tab)
@@ -98,6 +126,7 @@ struct s_lib_en	*ft_create_tab_struct(char *lib)
 		temp_struct.id = ft_parse_id(lib, &gi);
 		temp_struct.value = ft_parse_value(lib, &gi);
 		final_struct[i] = temp_struct;
+		i++;
 	}
 	return (final_struct);
 }
