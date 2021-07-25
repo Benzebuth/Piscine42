@@ -1,34 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_base.c                                          :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bcolin <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/24 16:16:30 by bcolin            #+#    #+#             */
-/*   Updated: 2021/07/25 21:34:12 by bcolin           ###   ########.fr       */
+/*   Created: 2021/07/23 22:04:33 by bcolin            #+#    #+#             */
+/*   Updated: 2021/07/23 22:13:50 by bcolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_base.h"
-
-void	ft_putstr(char *str)
+void	ft_swap(int *a, int *b)
 {
-	while (*str)
-		write(1, str++, 1);
-}
+	int	t;
 
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
-
-int	ft_strlen(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
+	t = *a;
+	*a = *b;
+	*b = t;
 }

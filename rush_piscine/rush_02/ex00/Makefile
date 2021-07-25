@@ -1,14 +1,38 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    libft_creator.sh                                   :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: bcolin <marvin@42lausanne.ch>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/07/23 21:49:34 by bcolin            #+#    #+#              #
-#    Updated: 2021/07/25 14:05:24 by bcolin           ###   ########.fr        #
+#    Created: 2021/07/25 21:34:48 by bcolin            #+#    #+#              #
+#    Updated: 2021/07/25 22:25:14 by bcolin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-#!/bin/sh
-gcc -Wall -Werror -Wextra -c *.c
-ar -crs libft.a *.o
+
+SRCS	= main.c ft_base.c ft_comp.c ft_dict.c ft_lib.c
+
+OBJ		= ${SRCS:.c=.o}
+
+NAME	= rush-02
+
+CC		= gcc
+RM		= rm -f
+
+CFLAGS	= -Wall -Werror -Wextra
+
+.c.o:
+			${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+
+${NAME}:	${OBJ}
+			${CC} -o $@ ${OBJ} 
+
+all:	${NAME}
+
+clean:
+			${RM} *.o
+
+fclean:	clean
+			${RM} ${NAME}
+
+.PHONY:	clean fclean

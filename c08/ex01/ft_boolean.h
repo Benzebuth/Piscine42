@@ -23,6 +23,6 @@ typedef char	t_bool;
 # define ODD_MSG "I have an odd number of arguments.\n"
 # define SUCCESS 0
 
-# define EVEN(V) (V % 2) ? 0 : 1
+# define EVEN(V) ((V % 2) ? 0 : 1)
 
 #endif

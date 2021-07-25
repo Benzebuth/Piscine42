@@ -6,7 +6,7 @@
 /*   By: bcolin <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/24 16:29:11 by bcolin            #+#    #+#             */
-/*   Updated: 2021/07/25 19:13:13 by bcolin           ###   ########.fr       */
+/*   Updated: 2021/07/25 21:34:06 by bcolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ int	ft_check_input(char *str)
 			return (0);
 		i++;
 	}
-	printf("check input ok\n" );
 	return (1);
 }
 

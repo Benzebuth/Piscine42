@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stock_str.h                                     :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bcolin <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/22 15:41:55 by bcolin            #+#    #+#             */
-/*   Updated: 2021/07/22 17:58:06 by bcolin           ###   ########.fr       */
+/*   Created: 2021/07/23 21:55:59 by bcolin            #+#    #+#             */
+/*   Updated: 2021/07/23 21:57:24 by bcolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
 
-typedef struct s_stock_str
+void	ft_putchar(char c)
 {
-	int		size;
-	char	*str;
-	char	*copy;
-}	t_stock_str;
+	write(1, &c, 1);
+}
