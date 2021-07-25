@@ -6,33 +6,36 @@
 #    By: bcolin <marvin@42lausanne.ch>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/25 14:13:36 by bcolin            #+#    #+#              #
-#    Updated: 2021/07/25 17:15:56 by bcolin           ###   ########.fr        #
+#    Updated: 2021/07/25 23:34:45 by bcolin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-SRCS	=	srcs/ft_putchar.c srcs/ft_swap.c srcs/ft_putstr.c srcs/ft_strlen.c srcs/ft_strcmp.c
 
-OBJS	=	${SRCS:.c=.o}
+SRCS	= ft_putchar.c ft_swap.c ft_putstr.c ft_strlen.c ft_strcmp.c
 
-NAME	=	libft.a
+OBJS	= $(addprefix srcs/, ${SRCS:.c=.o})
 
-CC		=	gcc
+NAME	= libft.a
 
-CFLAGS	=	-Wall -Werror -Wextra
+CC		= gcc
+RM		= rm -f
+
+CFLAGS	= -Wall -Wextra -Werror -I includes
+
+all:		${NAME}
 
 c.o.:
-		${CC} ${CFLAGS} -I includes -c $< -o ${<:.c=.o}
-
-all:	${NAME}
+			${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
 ${NAME}:	${OBJS}
-		ar -crs $@ ${OBJS}
+			ar -crs ${NAME} ${OBJS}
+
 
 clean:
-		rm -f ${OBJS}
+			${RM} ${OBJS}
 
 fclean:		clean
-		rm -f ${NAME}
+			${RM} ${NAME}
 
-re:		fclean all
+re:			fclean all
 
-.PHONY:	all	clean fclean re
+.PHONY:		all	clean fclean re
