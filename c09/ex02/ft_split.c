@@ -6,9 +6,10 @@
 /*   By: bcolin <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 14:36:44 by bcolin            #+#    #+#             */
-/*   Updated: 2021/07/26 22:52:27 by bcolin           ###   ########.fr       */
+/*   Updated: 2021/07/26 23:26:47 by bcolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -59,18 +60,18 @@ char	**ft_split(char	*str, char *charset)
 	int		dc;
 
 	dest = malloc(sizeof(char *) * ft_strlen(str) + 1);
+	dc = -1;
 	offset = 0;
 	i = 0;
 	while (str[i])
 	{	
-		check = 0;
-		while (check < ft_strlen(charset))
+		check = -1;
+		while (check++ < ft_strlen(charset))
 		{
 			if (str[i] == charset[check])
 				dest[dc] = ft_create_tab(&offset, i, str, &dc);
 			while (str[i] == charset[check])
 				i++;
-			check++;
 		}
 		i++;
 		offset++;
