@@ -6,10 +6,9 @@
 /*   By: bcolin <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 14:36:44 by bcolin            #+#    #+#             */
-/*   Updated: 2021/07/26 23:26:47 by bcolin           ###   ########.fr       */
+/*   Updated: 2021/07/27 17:40:10 by bcolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -51,6 +50,17 @@ char	*ft_create_tab(int *offset, int i, char *str, int *dc)
 	return (tab);
 }
 
+char	*ft_add_final_tab(int *dc)
+{
+	char	*tab;
+
+	*dc += 1;
+	tab = malloc(2 * sizeof(char));
+	tab[0] = 0;
+	tab[1] = '\0';
+	return (tab);
+}
+
 char	**ft_split(char	*str, char *charset)
 {
 	char	**dest;
@@ -62,8 +72,8 @@ char	**ft_split(char	*str, char *charset)
 	dest = malloc(sizeof(char *) * ft_strlen(str) + 1);
 	dc = -1;
 	offset = 0;
-	i = 0;
-	while (str[i])
+	i = -1;
+	while (str[++i])
 	{	
 		check = -1;
 		while (check++ < ft_strlen(charset))
@@ -73,10 +83,10 @@ char	**ft_split(char	*str, char *charset)
 			while (str[i] == charset[check])
 				i++;
 		}
-		i++;
 		offset++;
 	}
 	dest[dc] = ft_create_tab(&offset, i, str, &dc);
+	dest[dc] = ft_add_final_tab(&dc);
 	return (dest);
 }
 
@@ -86,10 +96,11 @@ int	main(void)
 	int		i;
 
 	i = 0;
-	tab = ft_split("coucou:::sal)usdatb:ien", ":)");
+	tab = ft_split("coucou://acava:bien", ":/");
 	while (tab[i])
 	{
 		printf("resu:%s\n", tab[i]);
 		i++;
 	}
 }
+
