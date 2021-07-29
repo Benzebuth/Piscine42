@@ -5,37 +5,40 @@
 #                                                     +:+ +:+         +:+      #
 #    By: bcolin <marvin@42lausanne.ch>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/07/25 14:13:36 by bcolin            #+#    #+#              #
-#    Updated: 2021/07/27 11:22:51 by bcolin           ###   ########.fr        #
+#    Created: 2021/07/27 12:45:17 by bcolin            #+#    #+#              #
+#    Updated: 2021/07/28 23:00:18 by bcolin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS	= ft_putchar.c ft_swap.c ft_putstr.c ft_strlen.c ft_strcmp.c
+SRCS	= main.c  ft_map_reader.c string.c load_map_from_fd.c solve.c ft_get_line.c ft_atoi.c string_2.c
 
-OBJS	= $(addprefix srcs/, ${SRCS:.c=.o})
-
-NAME	= libft.a
+OBJS	= ${SRCS:.c=.o}
 
 CC		= gcc
 RM		= rm -f
 
-CFLAGS	= -Wall -Wextra -Werror -I includes
+CFLAGS	= -Wall -Werror -Wextra
 
-all:		${NAME}
+EXEC	= bsq
 
-c.o.:
-			${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
-${NAME}:	${OBJS}
-			ar rcs ${NAME} ${OBJS}
+all:		${EXEC}
 
+.c.o:
+				${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+
+${EXEC}:	${OBJS}
+				${CC} -o $@ ${OBJS}
 
 clean:
-			${RM} ${OBJS}
+				${RM} ${OBJS}
 
-fclean:		clean
-			${RM} ${NAME}
+gen:	all
 
-re:			fclean all
 
-.PHONY:		all	clean fclean re
+fclean:	clean
+				${RM} ${EXEC}
+
+re:		fclean all
+
+.PHONY: clean fclean re

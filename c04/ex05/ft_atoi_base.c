@@ -1,16 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_atoi_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bcolin <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/15 22:33:46 by bcolin            #+#    #+#             */
-/*   Updated: 2021/07/29 15:39:18 by bcolin           ###   ########.fr       */
+/*   Created: 2021/07/29 17:24:18 by bcolin            #+#    #+#             */
+/*   Updated: 2021/07/29 17:49:14 by bcolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
-int	ft_atoi(char *str)
+unsigned int	ft_strlen(char *str)
+{
+	unsigned int	i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
+}
+
+void	ft_putnbr_base(int nbr, char *base, int *res)
+{
+	unsigned int	nb_u;
+	unsigned int	size;
+
+	size = ft_strlen(base);
+	if (nbr < 0)
+	{
+		nb_u = (unsigned int)nbr * -1;
+	}
+	else
+	{
+		nb_u = (unsigned int)nbr;
+	}
+	if (nb_u >= size)
+	{
+		ft_putnbr_base((nb_u / size), base, res);
+		ft_putnbr_base((nb_u % size), base, res);
+	}
+	else
+		*res += (base[nb_u]) - '0';
+}
+
+int	ft_atoi_base(char *str, char *base)
 {
 	int	i;
 	int	res;
@@ -33,27 +66,15 @@ int	ft_atoi(char *str)
 		res += str[i] - '0';
 		i++;
 	}
+	ft_putnbr_base(res, base, &res);
 	return (res * negative);
 }
 /*
-int	main()
+int	main(void)
 {
-	char	str[] = " 		--+--483648a";
-	char	str1[] = " 		----2147483647a";
-	char	str2[] = " 		---2147234648a";
-	char	str3[] = " 		--1245243648a";
-	char	str4[] = " 		-214345348a";
+	int	recu;
 
-	printf("%s\n", str);	
-	printf("%s\n", str1);	
-	printf("%s\n", str2);	
-	printf("%s\n", str3);	
-	printf("%s\n", str4);	
-
-	printf("%d\n", ft_atoi(str));	
-	printf("%d\n", ft_atoi(str1));	
-	printf("%d\n", ft_atoi(str2));	
-	printf("%d\n", ft_atoi(str3));	
-	printf("%d\n", ft_atoi(str4));	
+	recu = ft_atoi_base("350", "01");
+	printf("result;%d\n", recu);
 }
 */

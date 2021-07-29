@@ -5,16 +5,16 @@
 #                                                     +:+ +:+         +:+      #
 #    By: bcolin <marvin@42lausanne.ch>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/07/25 14:13:36 by bcolin            #+#    #+#              #
-#    Updated: 2021/07/27 11:22:51 by bcolin           ###   ########.fr        #
+#    Created: 2021/07/27 16:50:33 by bcolin            #+#    #+#              #
+#    Updated: 2021/07/27 16:54:42 by bcolin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS	= ft_putchar.c ft_swap.c ft_putstr.c ft_strlen.c ft_strcmp.c
+SRCS	= main.c ft_base.c
 
-OBJS	= $(addprefix srcs/, ${SRCS:.c=.o})
+OBJS	= ${SRCS:.c=.o}
 
-NAME	= libft.a
+NAME	= ft_display_file
 
 CC		= gcc
 RM		= rm -f
@@ -27,7 +27,7 @@ c.o.:
 			${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
 ${NAME}:	${OBJS}
-			ar rcs ${NAME} ${OBJS}
+			ar -crs ${NAME} ${OBJS}
 
 
 clean:

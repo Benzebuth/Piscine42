@@ -1,21 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_base.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bcolin <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/23 22:02:46 by bcolin            #+#    #+#             */
-/*   Updated: 2021/07/28 15:54:57 by bcolin           ###   ########.fr       */
+/*   Created: 2021/07/27 16:39:51 by bcolin            #+#    #+#             */
+/*   Updated: 2021/07/27 18:45:41 by bcolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
-{
-	int	i;
+#ifndef FT_BASE_H
+# define FT_BASE_H
 
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
+#include <unistd.h>
+
+void	ft_strlen(char *str);
+
+#endif
