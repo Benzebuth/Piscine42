@@ -1,7 +1,11 @@
 .DS_Store
+.zshrc
+
+
 .mestest
 imestest
-.zshrc
+
+
 a.out
 *.swp
-main.c
+*.o

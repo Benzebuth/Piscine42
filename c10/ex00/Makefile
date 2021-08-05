@@ -10,24 +10,24 @@
 #                                                                              #
 # **************************************************************************** #
 
-SRCS	= main.c ft_base.c
+SRCS	= main.c ft_base.c ft_read_file.c
 
 OBJS	= ${SRCS:.c=.o}
 
 NAME	= ft_display_file
 
-CC		= gcc
-RM		= rm -f
+CC	= gcc
+RM	= rm -f
 
 CFLAGS	= -Wall -Wextra -Werror -I includes
 
 all:		${NAME}
 
-c.o.:
+%.o: %.c
 			${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
 ${NAME}:	${OBJS}
-			ar -crs ${NAME} ${OBJS}
+			${CC} ${CFLAGS} ${SRCS}
 
 
 clean:

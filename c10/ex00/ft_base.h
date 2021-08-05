@@ -13,8 +13,11 @@
 #ifndef FT_BASE_H
 # define FT_BASE_H
 
-#include <unistd.h>
+# include <unistd.h>
+# include <fcntl.h>
+# include <stdio.h>
 
+int	ft_main_read(char *av);
 void	ft_strlen(char *str);
 
 #endif
