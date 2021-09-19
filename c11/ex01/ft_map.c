@@ -2,10 +2,11 @@
 
 int		*ft_map(int *tab, int length, int(*f)(int))
 {
-		int dest[10];
+		int *dest;
 		int i;
 		int tmp;
 
+		dest = malloc(sizeof(int) * length);
 		i = 0;
 		while (i < length)
 		{
@@ -23,6 +24,11 @@ int		ft_double(int i)
 	return (i);
 }
 
+int		ft_minus_one(int i)
+{
+	return (i - 1);
+}
+
 #include <stdio.h>
 int		main(void)
 {
@@ -30,7 +36,7 @@ int		main(void)
 
 	int *recu;
 
-	recu = ft_map(tab, 5, &ft_double);
+	recu = ft_map(tab, 5, &ft_minus_one);
 
 	int stop = 0;
 	while (stop < 5)
